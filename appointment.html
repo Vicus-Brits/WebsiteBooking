@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <title>Booking Pharma</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- ... your navbar code ... -->
+
+    <!-- Appointment Details Container -->
+    <div class="container my-5">
+      <h2>Appointment Details</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" id="pharmacyName">Pharmacy: Loading...</h5>
+          <p class="card-text" id="servicesList">Services: Loading...</p>
+          <p class="card-text" id="appointmentDateTime">
+            Date & Time: Loading...
+          </p>
+
+          <!-- Button Group for Edit and Confirm -->
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" id="editButton" class="btn btn-secondary">
+              Edit
+            </button>
+            <button type="button" id="confirmButton" class="btn btn-success">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript to display the appointment details -->
+    <script>
+      // Example JSON object with appointment details
+      const appointmentDetails = {
+        pharmacy: {
+          name: "Health Pharmacy",
+          address: "123 Wellness Road, Healthville",
+        },
+        services: ["Blood glucose monitoring", "Blood pressure check"],
+        date: "2024-04-05",
+        time: "09:00 AM - 09:30 AM",
+      };
+
+      // Function to display the details
+      function displayAppointmentDetails(details) {
+        const pharmacyNameElement = document.getElementById("pharmacyName");
+        const servicesListElement = document.getElementById("servicesList");
+        const appointmentDateTimeElement = document.getElementById(
+          "appointmentDateTime"
+        );
+
+        pharmacyNameElement.textContent = `Pharmacy: ${details.pharmacy.name}`;
+        servicesListElement.textContent = `Services: ${details.services.join(
+          ", "
+        )}`;
+        appointmentDateTimeElement.textContent = `Date & Time: ${details.date} at ${details.time}`;
+      }
+
+      // Add event listeners for the buttons
+      document
+        .getElementById("editButton")
+        .addEventListener("click", function () {
+          // TODO: Implement edit functionality
+          console.log("Edit button clicked");
+        });
+
+      document
+        .getElementById("confirmButton")
+        .addEventListener("click", function () {
+          // TODO: Implement confirm functionality
+          console.log("Confirm button clicked");
+        });
+
+      // Call the function with the JSON object
+      displayAppointmentDetails(appointmentDetails);
+    </script>
+  </body>
+</html>

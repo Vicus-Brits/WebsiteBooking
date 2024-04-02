@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmaBook</title>
+    <link rel="stylesheet" href="pharmastyle.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div id="bookpharmacy">
+        <h1>Book a Pharmacy</h1>
+        <img src="plus.jpg" alt="Add" />
+        <form id="postalCodeForm">
+          <div class="formInputs">
+            <label for="town">Town:</label>
+            <input type="text" id="town" name="town" />
+          </div>
+          <button type="button" id="btnBookPharmacy">Find Pharmacies</button>
+        </form>
+        <br />
+        <br />
+        <p>Hint: Type Addlestone, Weybridge</p>
+      </div>
+
+      <div id="townresults">
+        <h1>Results for</h1>
+        <button type="button" id="btnSelectService">Select Service</button>
+        <button type="button" class="btnBack" data-back-target="bookpharmacy">
+          Back
+        </button>
+      </div>
+
+      <div id="services">
+        <h1>Available Services</h1>
+        <button type="button" id="btnServices">Continue</button>
+        <button type="button" class="btnBack" data-back-target="townresults">
+          Back
+        </button>
+        <br />
+        <div id="NHSPharmacyFirst"></div>
+        <div id="NHSFree"></div>
+        <div id="PrivateServices"></div>
+      </div>
+
+      <div id="selectservice">
+        <h1>Selected Service</h1>
+        <button type="button" class="btnBack" data-back-target="services">
+          Back
+        </button>
+        <h1>Select Pharmacy</h1>
+      </div>
+
+      <div id="booktime">
+        <h1>Book Timeslot</h1>
+        <button type="button" id="btnBookTime">Book</button>
+        <button type="button" class="btnBack" data-back-target="selectservice">
+          Back
+        </button>
+      </div>
+
+      <div id="clientdetail">
+        <h1>Client Detail</h1>
+        <button type="button" id="btnClientDetail">Book</button>
+        <button type="button" class="btnBack" data-back-target="booktime">
+          Back
+        </button>
+      </div>
+
+      <div id="confirmation">
+        <h1>Confirmation</h1>
+        <button type="button" id="btnConfirmation">Confirm</button>
+        <button type="button" class="btnBack" data-back-target="clientdetail">
+          Back
+        </button>
+      </div>
+    </div>
+    <script src="pharmascript.js"></script>
+  </body>
+</html>

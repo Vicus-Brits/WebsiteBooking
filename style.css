@@ -1,0 +1,153 @@
+/* main container */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: #fff; /* Match the main container background */
+}
+
+body {
+  background-color: #007bff; /* Set the default background color */
+}
+.mainContainer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+/* Media query for devices with a width greater than 992px */
+@media (min-width: 992px) {
+  .mainContainer {
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* If you wish to see no grey background on larger screens, ensure
+       that the body or any wrapping elements don't have a different background set. */
+  }
+}
+
+/* List Item adjustments */
+.listItem {
+  cursor: pointer;
+  padding: 10px;
+  color: #007bff;
+  border: none; /* Remove border */
+  border-bottom: 1px solid grey; /* Grey underline */
+  margin-top: 0; /* Adjust if necessary */
+}
+.listItem::after {
+  content: "▼"; /* Down arrow symbol */
+  font-size: 1.2em; /* Adjust the size of the arrow as needed */
+  position: absolute;
+  /* Distance from the right edge of the listItem  */
+}
+
+/* Initially hide the form */
+.hidden {
+  display: none;
+}
+
+/* Radio Item adjustments */
+.radioItem {
+  display: block; /* Keep each radio button on a new line */
+  margin: 5px 0; /* Space out the radio buttons */
+  padding: 10px;
+  border: none; /* Remove border */
+  color: grey; /* Change text color to grey */
+  cursor: pointer;
+}
+
+/* Sign Up*/
+#postalCodeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Aligns children (input container and button) */
+  height: 100%; /* Adjust based on your needs */
+}
+
+.formInputs {
+  flex-grow: 1; /* Allows the input container to grow and push the button down */
+}
+
+/* Pharmacy */
+.pharmacy {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.pharmacy h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.pharmacy address {
+  font-style: normal;
+  color: #666;
+}
+
+/* form */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+label {
+  display: block;
+  margin: 20px 0 5px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+  box-sizing: border-box; /* Ensures padding does not add to overall width */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* confirmation */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#confirmationScreen {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: auto;
+}
+
+h2 {
+  color: #007bff;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#editButton {
+  background-color: #ffc107;
+  color: black;
+}
+
+#confirmButton {
+  background-color: #28a745;
+  color: white;
+}

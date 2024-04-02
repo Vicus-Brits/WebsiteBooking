@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expandable Radio List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <!-- Sign Up -->
+      <form id="postalCodeForm">
+        <div class="formInputs">
+          <!-- New container for inputs and labels -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname" name="surname" />
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" />
+          <label for="postalCode">Postal Code:</label>
+          <input type="text" id="postalCode" name="postalCode" />
+        </div>
+        <button type="button" onclick="findPostalCode()">
+          Find Pharmacies
+        </button>
+      </form>
+
+      <br />
+
+      <!-- Pharmacies -->
+      <div id="pharmaciesList"></div>
+
+      <br />
+      <!-- List Container Start -->
+      <div id="listContainer">
+        <div class="listItem" onclick="toggleList()">Private Services</div>
+        <form id="radioList" class="hidden"></form>
+        <!-- Radio buttons will be appended here -->
+        <!-- Postal Code Form remains the same -->
+      </div>
+
+      <br />
+
+      <!-- Appointment -->
+      <form id="appointmentForm">
+        <div id="dateButtons"></div>
+        <!-- Container for date buttons -->
+
+        <label for="timeSlots">Choose a time:</label>
+        <div id="timeSlots"></div>
+        <!-- New container for time slot buttons -->
+      </form>
+
+      <br />
+
+      <!-- Confirmation -->
+      <div id="confirmationScreen">
+        <h2>Appointment Confirmation</h2>
+        <p><strong>Pharmacy:</strong> <span id="selectedPharmacy"></span></p>
+        <p><strong>Services:</strong> <span id="selectedServices"></span></p>
+        <p><strong>Date:</strong> <span id="selectedDate"></span></p>
+        <p><strong>Time:</strong> <span id="selectedTime"></span></p>
+
+        <button id="editButton">Edit</button>
+        <button id="confirmButton">Confirm</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

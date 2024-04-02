@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <title>Booking Pharma</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- ... your navbar code ... -->
+
+    <!-- Pharmacy List Container -->
+    <div class="container mt-4">
+      <h2>Pharmacy List</h2>
+      <ul id="pharmacyList" class="list-group">
+        <!-- Pharmacy items will be added here -->
+      </ul>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript to dynamically add pharmacies -->
+    <script>
+      // Example JSON data for the pharmacies
+      const pharmaciesJson = [
+        {
+          name: "Health Pharmacy",
+          address: "123 Wellness Road, Healthville",
+        },
+        {
+          name: "CarePlus Pharmacy",
+          address: "456 Care Street, Caretown",
+        },
+        // More pharmacies...
+      ];
+
+      // Function to add pharmacies to the page
+      function displayPharmacies(pharmacies) {
+        const list = document.getElementById("pharmacyList");
+        // Clear the list first
+        list.innerHTML = "";
+
+        // Iterate over the JSON array
+        pharmacies.forEach((pharmacy) => {
+          const listItem = document.createElement("li");
+          listItem.className =
+            "list-group-item d-flex justify-content-between align-items-start";
+
+          const infoDiv = document.createElement("div");
+          infoDiv.innerHTML = `<strong>${pharmacy.name}</strong><br>${pharmacy.address}`;
+
+          const selectButton = document.createElement("button");
+          selectButton.className = "btn btn-primary";
+          selectButton.textContent = "Select Services";
+          selectButton.onclick = function () {
+            // TODO: Implement the action to be taken when the button is clicked
+            console.log(`Services selected for ${pharmacy.name}`);
+          };
+
+          listItem.appendChild(infoDiv);
+          listItem.appendChild(selectButton);
+
+          list.appendChild(listItem);
+        });
+      }
+
+      // Call the function with the JSON data
+      displayPharmacies(pharmaciesJson);
+    </script>
+  </body>
+</html>
